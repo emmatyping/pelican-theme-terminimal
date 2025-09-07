@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% import "macros/post.html" as post_macros -%}
+
+{% block html_lang %}{{ article.lang }}{% endblock %}
+
+{%- block title -%}
+{{ SITENAME|striptags }} - {{ article.title|striptags  }}
+{%- endblock -%}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="post">
+        {{ post_macros.header(page=article) }}
+        {{ post_macros.content(page=article, summary=false) }}
+        {{ post_macros.earlier_later(page=article) }}
+    </div>
+{% endblock content %}
+

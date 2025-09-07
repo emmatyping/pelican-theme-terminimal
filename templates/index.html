@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "macros/post.html" as post_macros -%}
+{% block content %}
+<div class="posts">
+    {%- for page in articles_page.object_list  %}
+        <div class="post on-list">
+            {{ post_macros.header(page=page) }}
+
+            {{ post_macros.content(page=page, summary=false) }}
+        </div>
+    {% endfor -%}
+    {% if articles_page.has_other_pages() %}
+        {% include 'pagination.html' %}
+    {% endif %}
+</div>
+{% endblock content %}

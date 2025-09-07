@@ -1,0 +1,30 @@
+{% macro head(accent_color, background_color) %}
+{% set theme_url = SITEURL ~ "/theme/" %}
+{% set css_url = theme_url ~ "css/" %}
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="noodp"/>
+
+<link rel="stylesheet" href="{{ css_url ~ 'style.css' | safe }}">
+
+{%- if accent_color %}
+    <link rel="stylesheet" href="{{ css_url ~ 'color/' ~ accent_color ~ '.css' | safe }}">
+{% else %}
+    <link rel="stylesheet" href="{{ css_url ~ 'color/blue.css' | safe }}">
+{% endif -%}
+
+{%- if background_color %}
+    {%- if accent_color and background_color != accent_color %}
+        <link rel="stylesheet" href="{{ css_url ~ 'color/background_' ~ background_color ~ '.css' | safe }}">
+    {% endif -%}
+{% else %}
+    <link rel="stylesheet" href="{{ css_url ~ 'color/background_dark.css' | safe }}">
+{% endif -%}
+
+{%- if False %}
+    <link rel="stylesheet" href="{{ css_url ~ 'font-hack.css' | safe }}">
+{% else %}
+    <link rel="stylesheet" href="{{ css_url ~ 'font-hack-subset.css' | safe }}">
+{% endif -%}
+
+{% endmacro %}

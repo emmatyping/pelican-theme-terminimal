@@ -1,0 +1,14 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: white;
+    --color: #101010;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101010;
+    --color: #A9B7C6;
+  }
+}
+
+/*# sourceMappingURL=background_auto.css.map */

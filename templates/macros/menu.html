@@ -1,0 +1,26 @@
+{% macro menu(menu_items, pages, categories) %}
+{% set active_page = active_page|default('index') -%}
+<nav class="menu">
+    <ul class="menu__inner">
+        {%- for title, url in menu_items %}
+        <li {%- if url.endswith(active_page + '.html') %} class="active" {%- endif %}>
+            {%- if url.startswith("$BASE_URL") -%}
+                <a href="{{ url | replace('$BASE_URL', SITEURL or '') | safe }}">{{ title | safe }}</a>
+            {%- else -%}
+                <a href="{{ url | safe }}" target="_blank" rel="noopener noreferrer">{{ title | safe }}</a>
+            {%- endif -%}
+        </li>
+        {% endfor -%}
+        {% if DISPLAY_PAGES_ON_MENU %}
+            {% for p in pages %}
+                <li><a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>{{ p.title }}</a></li>
+            {% endfor %}
+        {% endif %}
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+            {% for cat, null in categories %}
+                <li><a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}>{{ cat}}</a></li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</nav>
+{% endmacro %}
