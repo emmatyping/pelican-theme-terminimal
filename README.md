@@ -50,6 +50,7 @@ CSS_MIN = True
 I wanted to port over the basic theme so I could move my blog over to Pelican. I have a few things I would like to port over or add:
 
  - [ ] Mastodon verification support
+ - [ ] RSS feed link(s)
  - [ ] OpenGraph support
  - [ ] Toggleable/device aware dark/light theming
  - [ ] Some of the configurations from the original theme
