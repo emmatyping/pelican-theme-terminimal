@@ -39,6 +39,11 @@
       {% if TAG_FEED_RSS and tag %}
         <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME|striptags }} Tags RSS Feed" />
       {% endif %}
+      {% if MASTODON_URL %}
+        {% block mastodon %}
+          {{ head_macros.mastodon(MASTODON_URL) }}
+        {% endblock mastodon %}
+      {% endif %}
     {% endblock head %}
   </head>
 

@@ -28,3 +28,7 @@
 {% endif -%}
 
 {% endmacro %}
+
+{% macro mastodon(mastodon_url) %}
+    <link rel="me" href="{{ mastodon_url }}" />
+{% endmacro %}
