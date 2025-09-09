@@ -11,7 +11,7 @@
     div.logo {
       color: black;
     }
-  
+
   }
   @media (prefers-color-scheme: light) {
     --accent: rgb(32,128,192);
@@ -21,7 +21,7 @@
     --background: white;
     --color: #201030;
     --border-color: rgba(0,0,16,.125);
-    
+
     div.logo {
       color: white;
     }
