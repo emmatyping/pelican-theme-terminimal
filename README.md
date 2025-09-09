@@ -1,5 +1,7 @@
 # Terminimal theme for Pelican
 
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/emmatyping/pelican-theme-terminimal/main.svg)](https://results.pre-commit.ci/latest/github/emmatyping/pelican-theme-terminimal/main)
+
 This is a [Pelican](https://getpelican.com) theme based on the [zola-theme-terminimal](https://github.com/pawroman/zola-theme-terminimal) theme for [zola](https://getzola.org).
 
 ## Usage
