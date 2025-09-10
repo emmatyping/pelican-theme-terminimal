@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block html_lang %}{{ page.lang }}{% endblock %}
+
+{%- block title -%}
+{{ SITENAME|striptags }} - {{ page.title|striptags  }}
+{%- endblock -%}
+{% set active_page = page.slug -%}
+
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <article>
+    <header>
+      <h2>{{ page.title }}</h2>
+    </header>
+
+    {{ page.content }}
+
+  </article>
+{% endblock %}

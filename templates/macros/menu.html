@@ -1,6 +1,5 @@
 {% import "macros/rss.html" as rss -%}
-{% macro menu(menu_items, pages, categories, show_tags=False, show_rss=False) %}
-{% set active_page = active_page|default('index') -%}
+{% macro menu(menu_items, pages, categories, active_page) %}
 <nav class="menu">
     <ul class="menu__inner">
         {%- for title, url in menu_items %}
@@ -22,11 +21,11 @@
                 <li><a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}>{{ cat}}</a></li>
             {% endfor %}
         {% endif %}
-        <li class="menu__inner">
+        <li class="menu__inner" {%- if active_page == 'tags' %} class="active menu__inner" {%- endif %}>
             <div>
                 <a href="{{ SITEURL }}/tags.html" >Tags</a>
             </div>
-            <div style="margin-left: 20px;">
+            <div>
                 <a href="{{ SITEURL }}/feeds/all.rss.xml" >{{ rss.rss_icon() }}</a>
             </div>
         </li>

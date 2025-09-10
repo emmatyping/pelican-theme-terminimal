@@ -147,7 +147,6 @@ a.read-more:active {
   margin-left: auto;
 }
 .header .menu__inner li:last-of-type div:not(:last-of-type) {
-  margin-right: 20px;
   margin-bottom: 10px;
 }
 .header .menu__sub-inner {

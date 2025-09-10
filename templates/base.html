@@ -1,5 +1,6 @@
 {% import "macros/menu.html" as menu_macros -%}
 {% import "macros/head.html" as head_macros -%}
+{% set active_page = active_page|default('index') -%}
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
   <head>
@@ -65,7 +66,7 @@
                 </div>
             {% endblock header %}
             {% block nav %}
-                {{ menu_macros.menu(MENUITEMS, pages, categories) }}
+                {{ menu_macros.menu(MENUITEMS, pages, categories, active_page) }}
             {% endblock nav %}
         </header>
         <main>

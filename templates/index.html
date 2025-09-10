@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% import "macros/post.html" as post_macros -%}
+{% set active_page = 'index' %}
 {% block content %}
 <div class="posts">
     {%- for page in articles_page.object_list  %}

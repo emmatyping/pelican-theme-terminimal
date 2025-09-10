@@ -7,7 +7,7 @@
 {%- block title -%}
 {{ SITENAME|striptags }} - {{ article.title|striptags  }}
 {%- endblock -%}
-
+{% set active_page = article.slug -%}
 {% block head %}
     {{ super() }}
 {% endblock %}
