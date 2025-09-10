@@ -61,6 +61,24 @@
           margin-bottom: 10px;
           flex: 0 0 auto;
         }
+        &:last-of-type {
+          margin-bottom: 10px;
+          margin-left: auto;
+
+          div:not(:last-of-type) {
+            margin-right: 20px;
+            margin-bottom: 10px;
+          }
+          div:last-of-type {
+            padding-top: 0.1em;
+            width: 1.5em;
+            height: 1.5em;
+
+            svg {
+              fill: var(--accent);
+            }
+          }
+        }
       }
     }
 
