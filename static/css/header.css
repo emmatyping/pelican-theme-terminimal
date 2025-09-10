@@ -48,6 +48,9 @@
 .header .menu__inner li:last-of-type div:not(:last-of-type) {
   margin-bottom: 10px;
 }
+.header .menu__inner #rss_tags {
+  margin-left: auto;
+}
 .header .menu__sub-inner {
   position: relative;
   list-style: none;

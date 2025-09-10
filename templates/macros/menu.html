@@ -21,7 +21,7 @@
                 <li><a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}>{{ cat}}</a></li>
             {% endfor %}
         {% endif %}
-        <li class="menu__inner" {%- if active_page == 'tags' %} class="active menu__inner" {%- endif %}>
+        <li id="rss_tags" class="menu__inner" {%- if active_page == 'tags' %} class="active menu__inner" {%- endif %}>
             <div>
                 <a href="{{ SITEURL }}/tags.html" >Tags</a>
             </div>
