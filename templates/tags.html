@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "macros/rss.html" as rss -%}
+
+{% block title %}{{ SITENAME|striptags }} - Tags{% endblock %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column;">
+    <h2>Tags for {{ SITENAME }}</h2>
+    <ul>
+        {% for tag, articles in tags|sort %}
+            <li>
+                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})
+                <a href="{{ SITEURL }}/feeds/{{ tag }}/rss.xml" >{{ rss.rss_icon() }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

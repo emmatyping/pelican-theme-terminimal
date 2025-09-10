@@ -150,14 +150,6 @@ a.read-more:active {
   margin-right: 20px;
   margin-bottom: 10px;
 }
-.header .menu__inner li:last-of-type div:last-of-type {
-  padding-top: 0.1em;
-  width: 1.5em;
-  height: 1.5em;
-}
-.header .menu__inner li:last-of-type div:last-of-type svg {
-  fill: var(--accent);
-}
 .header .menu__sub-inner {
   position: relative;
   list-style: none;
@@ -664,6 +656,12 @@ hr {
   .footer .copyright-theme {
     font-size: 0.75rem;
   }
+}
+
+#rss_icon {
+  width: 1.2em;
+  height: 1.2em;
+  fill: var(--accent);
 }
 
 /*# sourceMappingURL=style.css.map */
