@@ -42,6 +42,8 @@ BACKGROUND_COLOR = 'dark'
 PLUGINS = [
     "pelican.plugins.neighbors",
     "pelican.plugins.minify",
+    # Optional
+    "pelican.plugins.statistics",
 ]
 
 CSS_MIN = True

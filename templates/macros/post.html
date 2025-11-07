@@ -86,8 +86,11 @@
 
 
 {% macro tags(page, short=false) %}
-    {%- if page.tags %}
-        <span class="post-tags-inline">
+    <span class="post-tags-inline">
+        {%- if page.tags %}
+            {%- if page.statistics %}
+                :: ⏲ ~{{ page.statistics['read_mins'] }}min
+            {% endif -%}
             {%- if short %}
                 ::
                 {%- set sep = "," -%}
@@ -99,6 +102,6 @@
                 <a class="post-tag" href="{{ SITEURL | safe }}/{{ tag.url | safe}}">#{{ tag }}</a>
                 {%- if not loop.last %}{{ sep | safe }}{% endif -%}
             {% endfor -%}
-        </span>
-    {% endif -%}
+        {% endif -%}
+    </span>
 {% endmacro %}
